@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background: url('https://moewalls.com/wp-content/uploads/2023/04/bongo-cat-neon-thumb.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            backdrop-filter: blur(4px);
-            
-            
+            overflow: hidden; /* Prevent scrolling */
+            position: relative;
+        }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Place video behind other content */
         }
         .container {
             width: 500px;
@@ -29,17 +31,27 @@
             border-radius: 20px;
             backdrop-filter: blur(5px);
             padding: 30px;
-            
+            color: white;
+            font-family: Arial, sans-serif;
         }
 
     </style>
 </head>
 
 <body>
+    <video autoplay loop>
+        <source src="https://rr16---sn-n8v7zns7.googlevideo.com/videoplayback?expire=1709919597&ei=DfnqZePDHLPav_IP2dWVKA&ip=176.109.178.92&id=o-APoiJtkW7pDstmnpuloaIOoCt6jhg0CAiG_Md199k-PW&itag=137&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&vprv=1&mime=video%2Fmp4&gir=yes&clen=1083562969&dur=10799.988&lmt=1700254208528489&keepalive=yes&fexp=24007246&c=ANDROID_EMBEDDED_PLAYER&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIgJRF3WVVRGqII9oY5aVaJfmm1Ww2B6QFlnkK0lGGD2V4CIQCSx3xNVhtlhGmcrESlfBGanoWwVrdrXF935O4QUjOOlw%3D%3D&redirect_counter=1&cm2rm=sn-gxuog0-n8ve7e&req_id=e4a488b42a05a3ee&cms_redirect=yes&cmsv=e&mh=2y&mm=29&mn=sn-n8v7zns7&ms=rdu&mt=1709897830&mv=m&mvi=16&pl=21&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=APTiJQcwRQIhAKPmx2GkCGadr76bWsnKfV5YtyReom9e6lwb43aJnYTYAiBeQ2MSR0m6G9d8QkB3AdpTbDIKxh9ObmzYP5BW_NUwFQ%3D%3D" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <div class='container'>
-        <h1>nosleepfortonight</h1>
-        <p>Hi! Im NoSleepForTonight. I like coding?<br>And im coder on gdpshelper and FruceAPI creator. Also FruitSpace beta tester :3 I like some weird shit, and kot_v_palto is cool :)</p>
-        <div style='display: flex; flex-direction: row;'><img src='https://freelogopng.com/images/all_img/1691730813discord-icon-png.png' width=50 style='margin-right: 10px; cursor: pointer;' onclick='location.href="https://discord.gg/3FCcB3MVwU"'><img src='https://www.pngplay.com/wp-content/uploads/8/Youtube-Logo-PNG-HD-Quality.png' onclick='location.href="https://www.youtube.com/channel/UCDdT65wYaVTqpsI6TES_Mqw"' width=50 style='cursor: pointer;'></div>
+        <div style='display: flex; flex-direction: row;'>
+            <img src="https://cdn.discordapp.com/avatars/1000342295071174690/6bc64839dea95fa282289a9f2a57c432.webp?size=128" style='border-radius: 10px; border-width: 5px; border-style: dashed; border-color: #7300ff;'>
+            <div style='display: flex; flex-direction: column; margin-left: 50px;'>
+                <h1 style='margin-bottom: 10px;'>NoSleep</h1>
+                <p>Алексей Жуков</p>
+            </div>
+        </div>
     </div>
 </body>
 
