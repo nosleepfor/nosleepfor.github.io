@@ -69,6 +69,21 @@ body {
     
 
 }
+.down_sci {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:50%;
+    z-index: -4;
+    left:50%;
+    transform: translate(-50%, 200%);
+    margin:0;
+    opacity: 0.1;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    
+
+}
 
 @keyframes slide_in {
     0% {
@@ -90,16 +105,18 @@ body {
     }
 }
 
-.down:hover {
+
+
+
+.down:hover, .down_sci:hover{
     
     opacity: 1;
 }
 
-.down:active {
+.down:active, .down_sci:active{
     width:210px;
     height:210px; 
 }
-
 @keyframes move_me_up {
     100% {
         transform: translate(-50%, -1000%);
@@ -109,6 +126,15 @@ body {
 @keyframes scroll_in_place {
     100% {
         transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes scroll_out_place {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(-50%, 400%);
     }
 }
 
@@ -148,7 +174,11 @@ body {
     animation-name: scroll_in_place;
     animation-duration: 2s;
 }
-
+.scroll_out_1_anim {
+    animation-fill-mode: forwards;
+    animation-name: scroll_out_place;
+    animation-duration: 6s;
+}
 p {
     font-size: 28px;
     font-family: 'oxygen';
