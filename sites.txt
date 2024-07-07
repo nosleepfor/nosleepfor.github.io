@@ -1,1 +1,1 @@
-{"web.page": "<title>Welcome!</title><h1>Welcome to web!</h1><p>Its the first website</p>"}
+{"uw://web.page": "<title>Welcome!</title><h1>Welcome to web!</h1><p>Its the first website</p>"}
