@@ -7,7 +7,9 @@
 
 
 <h1 id='username'></h1>
+<h1 id='userid'></h1>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-  document.getElementById('username').innerText = window.Telegram.WebApp.initDataUnsafe.user.id;
+  document.getElementById('username').innerText = `Your username: ${window.Telegram.WebApp.initDataUnsafe.user.username}`;
+  document.getElementById('userid').innerText = `Your user ID: ${window.Telegram.WebApp.initDataUnsafe.user.id}`;
 </script>
