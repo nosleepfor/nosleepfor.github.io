@@ -17,7 +17,7 @@
 <h1 id='username'></h1>
 <h1 id='userid'></h1>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<button onclick="window.Telegram.sendData('launch')">Тык :3</button>
+<button onclick="window.Telegram.WebApp.sendData('launch')">Тык :3</button>
 <script>
   document.getElementById('username').innerText = `@${window.Telegram.WebApp.initDataUnsafe.user.username}`;
 
