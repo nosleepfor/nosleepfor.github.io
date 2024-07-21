@@ -5,10 +5,9 @@
   }
 </style>
 
+
+<h1 id='username'>Uh test</h1>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-  body.addEventListener('click', () => {
-    window.Telegram.WebApp.showPopup(message=window.Telegram.WebApp.initDataUnsafe.username);
-  }
+  document.getElementById('username').innerText = window.Telegram.WebApp.initDataUnsafe.username;
 </script>
-<h1>Uh test</h1>
