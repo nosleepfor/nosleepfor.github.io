@@ -2,6 +2,7 @@
   body {
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
+
   }
 
   button {
@@ -14,9 +15,13 @@
 </style>
 
 
-<h1 id='username'></h1>
-<h1 id='userid'></h1>
-<button id='tik'>Тык :3</button>
+<h2 id='username' style="">@username</h2>
+
+<h1 style="top: 25%; left: 50%; position: absolute; font-size: 60px; margin: 0; padding: 0; transform: translate(-50%, -50%);">0</h1>
+
+<div style="top: 50%; left: 50%; position: absolute; transform: translate(-50%, -50%);">
+    <img src='https://github.com/nosleepfor/nosleepfor.github.io/blob/main/lun_coin(1).png?raw=true' style='position: absolute; top: 50%; left: 50%; width: 400px; height: 400px; transform: translate(-50%, -50%);' id='coin'>
+</div>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <script>
@@ -24,5 +29,20 @@
     window.Telegram.WebApp.sendData('launch')
   })
   document.getElementById('username').innerText = `@${window.Telegram.WebApp.initDataUnsafe.user.username}`;
+  if (window.Telegram.WebApp.CloudStorage.getItem("coins") == null) {
+      window.Telegram.WebApp.CloudStorage.setItem("coins", 0);
+  }
+  var coin = document.getElementById("coin")
+  coin.addEventListener("onmousedown", () => {
+      coin.style.width = "350px";
+      coin.style.height = "350px";
+      window.Telegram.WebApp.CloudStorage.setItem("coins", window.Telegram.WebApp.CloudStorage.getItem("coins")+1);
+      coin.innerText = window.Telegram.WebApp.CloudStorage.getItem("coins");
+      
+  })
+  coin.addEventListener("onmouseup", () => {
+      coin.style.width = "400px";
+      coin.style.height = "400px";
+  })
 
 </script>
