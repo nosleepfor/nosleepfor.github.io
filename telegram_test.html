@@ -17,7 +17,7 @@
 
 <h2 id='username' style="">@username</h2>
 
-<h1 style="top: 25%; left: 50%; position: absolute; font-size: 60px; margin: 0; padding: 0; transform: translate(-50%, -50%);" id='coins'>0</h1>
+<h1 style="top: 20%; left: 50%; position: absolute; font-size: 60px; margin: 0; padding: 0; transform: translate(-50%, -50%);" id='coins'>0</h1>
 
 <div style="top: 50%; left: 50%; position: absolute; transform: translate(-50%, -50%);">
     <img src='https://github.com/nosleepfor/nosleepfor.github.io/blob/main/lun_coin(1).png?raw=true' style='position: absolute; top: 50%; left: 50%; width: 400px; height: 400px; transform: translate(-50%, -50%);' id='coin'>
@@ -27,17 +27,26 @@
 <script>
 
   document.getElementById('username').innerText = `@${window.Telegram.WebApp.initDataUnsafe.user.username}`;
-  if (window.Telegram.WebApp.CloudStorage.getItem("coins") == null) {
+  window.Telegram.WebApp.CloudStorage.getItem("coins", (_, r) => {
+    if (r == '') {
       window.Telegram.WebApp.CloudStorage.setItem("coins", 0);
-  }
-  coins.innerText = window.Telegram.WebApp.CloudStorage.getItem("coins");
+    }
+  })
+  window.Telegram.WebApp.CloudStorage.getItem("coins", (_ ,r) => {
+        coins.innerText = r;
+      });
   var coin = document.getElementById("coin")
   var coins = document.getElementById("coins")
   coin.addEventListener("onmousedown", () => {
       coin.style.width = "350px";
       coin.style.height = "350px";
-      window.Telegram.WebApp.CloudStorage.setItem("coins", window.Telegram.WebApp.CloudStorage.getItem("coins")+1);
-      coins.innerText = window.Telegram.WebApp.CloudStorage.getItem("coins");
+    window.Telegram.WebApp.CloudStorage.getItem("coins", (_, r) => {
+      window.Telegram.WebApp.CloudStorage.setItem("coins", r+1);
+    })
+      
+  window.Telegram.WebApp.CloudStorage.getItem("coins", (_ ,r) => {
+    coins.innerText = r;
+  });
       
   })
   coin.addEventListener("onmouseup", () => {
