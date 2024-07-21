@@ -3,13 +3,19 @@
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
   }
+
+  button {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+  }
 </style>
 
 
 <h1 id='username'></h1>
 <h1 id='userid'></h1>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<button>Тык :3</button>
 <script>
-  document.getElementById('username').innerText = `Your username: ${window.Telegram.WebApp.initDataUnsafe.user.username}`;
-  document.getElementById('userid').innerText = `Your user ID: ${window.Telegram.WebApp.initDataUnsafe.user.id}`;
+  document.getElementById('username').innerText = `@${window.Telegram.WebApp.initDataUnsafe.user.username}`;
+
 </script>
